@@ -1,11 +1,11 @@
 package algorithms.princeton.part1.excercises.sort.impl;
 
 import algorithms.princeton.part1.excercises.sort.Sort;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-@Service
+@Component
 public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 
 	@Override
