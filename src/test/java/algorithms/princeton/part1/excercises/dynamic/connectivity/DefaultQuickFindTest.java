@@ -17,47 +17,44 @@ import static org.junit.Assert.assertTrue;
 public class DefaultQuickFindTest {
 
 	@InjectMocks
-	private DefaultQuickFind defaultQuickFind;
+	private DefaultQuickFind<String> defaultQuickFind;
 
 	@Before
 	public void before() { }
 
 	@Test
 	public void union_twoElementArray() {
-		final int[] initialArray = new int[] {0, 1};
-		final int[] expectedArray = new int[] {1, 1};
+		final String[] elements = new String[] {"0", "1"};
 
-		final int[] actualArray = defaultQuickFind.init(initialArray)
-				.union(0, 1).getArray();
-
-		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
+		assertEquals(
+				Arrays.toString(new int[] {1, 1}),
+				Arrays.toString(defaultQuickFind.init(elements).union("0", "1").getIndexes()));
 	}
 
 	@Test
 	public void connected_true() {
-		final int[] initialArray = new int[] {0, 1, 2};
+		final String[] elements = new String[] {"0", "1", "2"};
 
-		assertTrue(defaultQuickFind.init(initialArray).union(0, 1).connected(0, 1));
+		assertTrue(defaultQuickFind.init(elements).union("0", "1").connected("0", "1"));
 	}
 
 	@Test
 	public void connected_false() {
-		final int[] initialArray = new int[] {0, 1, 2};
+		final String[] elements = new String[] {"0", "1", "2"};
 
-		assertFalse(defaultQuickFind.init(initialArray).union(0, 1).connected(0, 2));
+		assertFalse(defaultQuickFind.init(elements).union("0", "1").connected("0", "2"));
 	}
 
 	@Test
 	public void union_week1_question1() {
-		final int[] initialArray = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-		final int[] expectedArray = new int[] {1, 1, 1, 1, 6, 1, 6, 7, 8, 1};
+		final String[] elements = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-		final int[] actualArray = defaultQuickFind.init(initialArray)
-				.union(5, 2).union(0, 2).union(5, 9)
-				.union(2, 1).union(3, 9).union(4, 6)
-				.getArray();
-
-		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
+		assertEquals(
+				Arrays.toString(new int[] {1, 1, 1, 1, 6, 1, 6, 7, 8, 1}),
+				Arrays.toString(defaultQuickFind.init(elements)
+						.union("5", "2").union("0", "2").union("5", "9")
+						.union("2", "1").union("3", "9").union("4", "6")
+						.getIndexes()));
 	}
 
 }

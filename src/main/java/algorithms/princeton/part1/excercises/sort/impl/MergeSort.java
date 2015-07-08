@@ -6,25 +6,24 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 
 @Service
-public class MergeSort implements Sort {
+public class MergeSort<T extends Comparable<T>> implements Sort<T> {
 
 	@Override
-	public int[] sort(int[] a) {
-		int[] b = Arrays.copyOf(a, a.length);
+	public T[] sort(T[] a) {
+		T[] b = Arrays.copyOf(a, a.length);
 
-		int[] c = innerSort(b);
-
+		T[] c = innerSort(b);
 
 		for (int i = 0; i < b.length; i++) {
 			int min = i;
 
 			for (int j = i; j < b.length; j++) {
-				if (b[j] < b[min]) {
+				if (b[j].compareTo(b[min]) < 0) {
 					min = j;
 				}
 			}
 
-			int tmp = b[i];
+			T tmp = b[i];
 			b[i] = b[min];
 			b[min] = tmp;
 		}
@@ -32,15 +31,18 @@ public class MergeSort implements Sort {
 		return b;
 	}
 
-	private int[] innerSort(int[] b) {
+	private T[] innerSort(T[] b) {
 		int medium = b.length / 2;
 
+		return null;
+		/*
 		innerSort();
 		innerSort();
 		merge();
+		*/
 	}
 
-	private int[] merge(int[] b) {
+	private T[] merge(int[] b) {
 		return null;
 	}
 

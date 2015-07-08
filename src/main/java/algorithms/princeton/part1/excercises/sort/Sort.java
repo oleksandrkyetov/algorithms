@@ -1,7 +1,7 @@
 package algorithms.princeton.part1.excercises.sort;
 
-public interface Sort {
+public interface Sort<T extends Comparable<T>> {
 
-	int[] sort(int a[]);
+	T[] sort(T[] a);
 
 }

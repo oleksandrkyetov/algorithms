@@ -1,13 +1,15 @@
 package algorithms.princeton.part1.excercises.dynamic.connectivity;
 
-public interface DynamicConnectivity {
+public interface DynamicConnectivity<T extends Comparable<T>> {
 
-	DynamicConnectivity init(int[] array);
+	DynamicConnectivity<T> init(T[] array);
 
-	DynamicConnectivity union(int p, int q);
+	DynamicConnectivity<T> union(T p, T q);
 
-	boolean connected(int p, int q);
+	boolean connected(T p, T q);
 
-	int[] getArray();
+	T[] getElements();
+
+	int[] getIndexes();
 
 }

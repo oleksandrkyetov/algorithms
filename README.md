@@ -1,7 +1,4 @@
 TODO Princeton:
-- Quick Find
-- Quick Union
-- Weighted Quick Union
 - Percolation
 
 - Stack
@@ -10,11 +7,8 @@ TODO Princeton:
 - Queue
 - Deque
 
-- Selection Sort
-- Insertion Sort
 - Shell Sort
 - Shuffling
-- Bubble Sort
 - Convex Hull
 
 - Merge Sort

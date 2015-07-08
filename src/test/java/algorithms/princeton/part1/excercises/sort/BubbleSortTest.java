@@ -1,5 +1,6 @@
 package algorithms.princeton.part1.excercises.sort;
 
+import algorithms.princeton.part1.excercises.sort.impl.BubbleSort;
 import algorithms.princeton.part1.excercises.sort.impl.InsertionSort;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,10 +13,10 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class InsertionSortTest {
+public class BubbleSortTest {
 
 	@InjectMocks
-	private InsertionSort<String> insertionSort;
+	private BubbleSort<String> bubbleSort;
 
 	@Before
 	public void before() {
@@ -26,7 +27,7 @@ public class InsertionSortTest {
 		final String[] initialArray = new String[] {"9", "8", "7", "6", "5", "4", "3", "2", "1", "0"};
 		final String[] expectedArray = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-		final String[] actualArray = insertionSort.sort(initialArray);
+		final String[] actualArray = bubbleSort.sort(initialArray);
 
 		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
 	}
@@ -36,7 +37,7 @@ public class InsertionSortTest {
 		final String[] initialArray = new String[] {"3", "8", "7", "5", "6", "1", "9", "0", "4", "2"};
 		final String[] expectedArray = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-		final String[] actualArray = insertionSort.sort(initialArray);
+		final String[] actualArray = bubbleSort.sort(initialArray);
 
 		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
 	}

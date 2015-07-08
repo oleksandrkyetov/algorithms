@@ -6,36 +6,59 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component
-public class DefaultQuickFind implements DynamicConnectivity {
+public class DefaultQuickFind<T extends Comparable<T>> implements DynamicConnectivity<T> {
 
-	private int[] array;
+	private int[] indexes;
+	private T[] elements;
 
 	@Override
-	public DynamicConnectivity init(int[] array) {
-		this.array = Arrays.copyOf(array, array.length);
+	public DynamicConnectivity<T> init(T[] array) {
+		this.elements = Arrays.copyOf(array, array.length);
+
+		this.indexes = new int[elements.length];
+		for (int i = 0; i < indexes.length; i++) {
+			indexes[i] = i;
+		}
+
 		return this;
 	}
 
 	@Override
-	public DynamicConnectivity union(int p, int q) {
-		int pi = array[p];
-		int qi = array[q];
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] == pi) {
-				array[i] = qi;
+	public DynamicConnectivity<T>  union(T p, T q) {
+		int pi = getIndex(p);
+		int qi = getIndex(q);
+		for (int i = 0; i < indexes.length; i++) {
+			if (indexes[i] == pi) {
+				indexes[i] = qi;
 			}
 		}
+
 		return this;
 	}
 
 	@Override
-	public boolean connected(int p, int q) {
-		return array[p] == array[q];
+	public boolean connected(T p, T q) {
+		return indexes[getIndex(p)] == indexes[getIndex(q)];
 	}
 
 	@Override
-	public int[] getArray() {
-		return Arrays.copyOf(array, array.length);
+	public T[] getElements() {
+		return Arrays.copyOf(elements, elements.length);
+	}
+
+	@Override
+	public int[] getIndexes() {
+		return Arrays.copyOf(indexes, indexes.length);
+	}
+
+	private int getIndex(T element) {
+		for (int i = 0; i < elements.length; i++) {
+			if (elements[i].equals(element)) {
+				return indexes[i];
+			}
+		}
+
+		throw new IllegalArgumentException("No such element in the array: " + element + " ...");
 	}
 
 }
