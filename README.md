@@ -23,3 +23,10 @@ TODO Stanford:
 - Inversions Counter
 - Strassen's Subcubic Matrix Multiplication
 - Closest Pair Points
+
+DONE:
+- QuickFind
+- QuickUnion
+- WeightedQuickUnion
+- InsertionSort
+- SelectionSort
