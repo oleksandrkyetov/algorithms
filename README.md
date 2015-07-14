@@ -11,7 +11,7 @@ TODO Princeton:
 - Shuffling
 - Convex Hull
 
-- Merge Sort
+- Bottom Up Merge Sort
 - Quick Sort
 - Quick Selection
 
@@ -30,3 +30,4 @@ DONE:
 - WeightedQuickUnion
 - InsertionSort
 - SelectionSort
+- Top Down Merge Sort
