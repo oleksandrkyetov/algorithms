@@ -11,18 +11,17 @@ TODO Princeton:
 - Shuffling
 - Convex Hull
 
-- Bottom Up Merge Sort
 - Quick Sort
 - Quick Selection
-
-
 
 TODO Stanford:
 - Integer Multiplication
 - Karatsuba Multiplication
-- Inversions Counter
 - Strassen's Subcubic Matrix Multiplication
 - Closest Pair Points
+
+CHECK:
+- Bottom Up Merge Sort
 
 DONE:
 - QuickFind
@@ -31,3 +30,5 @@ DONE:
 - InsertionSort
 - SelectionSort
 - Top Down Merge Sort
+- Inversions Counter
+

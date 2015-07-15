@@ -1,7 +1,6 @@
 package algorithms.sort;
 
 import algorithms.sort.impl.BottomUpMergeSort;
-import algorithms.sort.impl.TopDownMergeSort;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,6 +38,11 @@ public class BottomUpMergeSortTest {
 		final String[] actualArray = bottomUpMergeSort.sort(initialArray);
 
 		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
+	}
+
+	@Test
+	public void sort_exercise() {
+		new BottomUpMergeSort<Integer>().sort(new Integer[] {36, 53, 39, 61, 51, 26, 57, 86, 80, 52});
 	}
 
 }

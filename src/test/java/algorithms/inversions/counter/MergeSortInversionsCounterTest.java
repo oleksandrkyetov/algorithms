@@ -9,8 +9,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.function.ToIntFunction;
 import java.util.stream.Stream;
 
@@ -44,25 +42,6 @@ public class MergeSortInversionsCounterTest {
 		final String[] initialArray = new String[] {"0", "2", "1", "3", "4"};
 
 		assertEquals(1, mergeSortInversionsCounter.count(initialArray));
-	}
-
-	@Test
-	public void count_assignment() throws Exception {
-		final Stream<String> stream = Files.lines(Paths.get(getClass().getClassLoader().getResource("array.txt").getPath()));
-		final int[] arrayInt = stream.mapToInt(new ToIntFunction<String>() {
-			@Override
-			public int applyAsInt(final String string) {
-				return Integer.parseInt(string);
-			}
-		}).toArray();
-		stream.close();
-
-		final Integer[] arrayInteger = new Integer[arrayInt.length];
-		for (int i = 0; i < arrayInteger.length; i++) {
-			arrayInteger[i] = arrayInt[i];
-		}
-
-		System.out.println(new MergeSortInversionsCounter<Integer>().count(arrayInteger));
 	}
 
 }

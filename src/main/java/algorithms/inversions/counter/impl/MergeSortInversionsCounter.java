@@ -8,10 +8,10 @@ import java.util.Arrays;
 @Component
 public class MergeSortInversionsCounter<T extends Comparable<T>> implements Counter<T> {
 
-	private int count = 0;
+	private long count = 0;
 
 	@Override
-	public int count(T[] a) {
+	public long count(T[] a) {
 		final T[] b = Arrays.copyOf(a, a.length);
 
 		countSort(b, 0, b.length);
@@ -43,14 +43,7 @@ public class MergeSortInversionsCounter<T extends Comparable<T>> implements Coun
 
 				b[k] = auxiliary[leftIndex++];
 			} else {
-				count += middle - leftIndex;
-
-				if (middle - leftIndex < 1) {
-					System.out.println("count " + count);
-					System.out.println("leftIndex " + leftIndex);
-					System.out.println("rightIndex " + rightIndex);
-					System.out.println("middle " + middle);
-				}
+				count += (middle - leftIndex);
 
 				b[k] = auxiliary[rightIndex++];
 			}
