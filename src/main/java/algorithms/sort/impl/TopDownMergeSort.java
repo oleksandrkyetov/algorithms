@@ -33,24 +33,38 @@ public class TopDownMergeSort<T extends Comparable<T>> implements Sort<T> {
 	private void merge(T[] b, int start, int middle, int end) {
 		T[] auxiliary = Arrays.copyOf(b, b.length);
 
-		System.out.println("Left:" + Arrays.toString(Arrays.copyOfRange(b, start, middle)));
-		System.out.println("Right:" + Arrays.toString(Arrays.copyOfRange(b, middle, end)));
-
-		System.out.println("Before merge:" + Arrays.toString(Arrays.copyOfRange(b, start, end)));
-
 		int leftIndex = start;
 		int rightIndex = middle;
 		for (int k = start; k < end; k++) {
 			if (leftIndex < middle
 					&& (rightIndex >= end || auxiliary[leftIndex].compareTo(auxiliary[rightIndex]) < 0)) {
 
-					b[k] = auxiliary[leftIndex++];
+				b[k] = auxiliary[leftIndex++];
 			} else {
 				b[k] = auxiliary[rightIndex++];
 			}
-		}
 
-		System.out.println("After merge:" + Arrays.toString(Arrays.copyOfRange(b, start, end)));
+			/*
+			if (leftIndex < middle && rightIndex < end) {
+				if (auxiliary[leftIndex].compareTo(auxiliary[rightIndex]) < 0) {
+					b[k] = auxiliary[leftIndex++];
+					// TODO Add count here
+				} else {
+					b[k] = auxiliary[rightIndex++];
+					// TODO Add count here
+				}
+			} else {
+				if (leftIndex >= middle && rightIndex < end) {
+					b[k] = auxiliary[rightIndex++];
+					// TODO Add count here
+				}
+				if (rightIndex >= end && leftIndex < middle) {
+					b[k] = auxiliary[leftIndex++];
+					// TODO Add count here
+				}
+			}
+			*/
+		}
 	}
 
 }
