@@ -19,7 +19,7 @@ public class MergeSortInversionsCounter<T extends Comparable<T>> implements Coun
 		return count;
 	}
 
-	public void countSort(T[] b, int start, int end) {
+	private void countSort(T[] b, int start, int end) {
 		if ((end - start) <= 1) {
 			return;
 		}
@@ -32,7 +32,7 @@ public class MergeSortInversionsCounter<T extends Comparable<T>> implements Coun
 		countMerge(b, start, middle, end);
 	}
 
-	public void countMerge(T[] b, int start, int middle, int end) {
+	private void countMerge(T[] b, int start, int middle, int end) {
 		final T[] auxiliary = Arrays.copyOf(b, b.length);
 
 		int leftIndex = start;
@@ -44,6 +44,14 @@ public class MergeSortInversionsCounter<T extends Comparable<T>> implements Coun
 				b[k] = auxiliary[leftIndex++];
 			} else {
 				count += middle - leftIndex;
+
+				if (middle - leftIndex < 1) {
+					System.out.println("count " + count);
+					System.out.println("leftIndex " + leftIndex);
+					System.out.println("rightIndex " + rightIndex);
+					System.out.println("middle " + middle);
+				}
+
 				b[k] = auxiliary[rightIndex++];
 			}
 
