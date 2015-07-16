@@ -1,4 +1,5 @@
 TODO Princeton:
+
 - Percolation
 
 - Stack
@@ -14,7 +15,9 @@ TODO Princeton:
 - Quick Sort
 - Quick Selection
 
+
 TODO Stanford:
+
 - Integer Multiplication
 - Karatsuba Multiplication
 - Strassen's Subcubic Matrix Multiplication
@@ -22,11 +25,15 @@ TODO Stanford:
 - The Recursion Tree
 - Master Method
 
+
 CHECK:
+
 - Bottom Up Merge Sort
 - Bottom Up Inversions Counter
 
+
 DONE:
+
 - QuickFind
 - QuickUnion
 - WeightedQuickUnion
