@@ -20,6 +20,7 @@ TODO Stanford:
 - Strassen's Subcubic Matrix Multiplication
 - Closest Pair Points
 - The Recursion Tree
+- Master Method
 
 CHECK:
 - Bottom Up Merge Sort
