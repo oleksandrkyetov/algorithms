@@ -19,6 +19,7 @@ TODO Stanford:
 - Karatsuba Multiplication
 - Strassen's Subcubic Matrix Multiplication
 - Closest Pair Points
+- The Recursion Tree
 
 CHECK:
 - Bottom Up Merge Sort
@@ -32,4 +33,3 @@ DONE:
 - SelectionSort
 - Top Down Merge Sort
 - Top Down Inversions Counter
-
