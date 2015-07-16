@@ -16,7 +16,6 @@ public class BottomUpMergeSort<T extends Comparable<T>> implements Sort<T> {
 		for (int size = 1; size < b.length; size += size) {
 			for(int start = 0; start < b.length - size; start += size * 2) {
 				merge(b, start, start + size, Math.min(start + size * 2, b.length));
-				System.out.println(Arrays.toString(b));
 			}
 		}
 
@@ -28,10 +27,7 @@ public class BottomUpMergeSort<T extends Comparable<T>> implements Sort<T> {
 
 		int leftIndex = start;
 		int rightIndex = middle;
-		if (end == 10) {
-			int x = 5;
-		}
-		for (int k = leftIndex; k < end; k++) {
+		for (int k = start; k < end; k++) {
 			if (leftIndex < middle
 					&& (rightIndex >= end || auxiliary[leftIndex].compareTo(auxiliary[rightIndex]) < 0)) {
 

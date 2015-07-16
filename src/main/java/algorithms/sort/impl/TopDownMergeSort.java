@@ -28,7 +28,6 @@ public class TopDownMergeSort<T extends Comparable<T>> implements Sort<T> {
 		sort(b, middle, end);
 
 		merge(b, start, middle, end);
-		System.out.println(Arrays.toString(b));
 	}
 
 	private void merge(T[] b, int start, int middle, int end) {

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component
-public class MergeSortInversionsCounter<T extends Comparable<T>> implements Counter<T> {
+public class TopDownMergeSortInversionsCounter<T extends Comparable<T>> implements Counter<T> {
 
 	private long count = 0;
 
