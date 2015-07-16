@@ -22,6 +22,7 @@ TODO Stanford:
 
 CHECK:
 - Bottom Up Merge Sort
+- Bottom Up Inversions Counter
 
 DONE:
 - QuickFind
@@ -30,5 +31,5 @@ DONE:
 - InsertionSort
 - SelectionSort
 - Top Down Merge Sort
-- Inversions Counter
+- Top Down Inversions Counter
 
