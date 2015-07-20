@@ -18,8 +18,7 @@ public class InsertionSortTest {
 	private InsertionSort<String> insertionSort;
 
 	@Before
-	public void before() {
-	}
+	public void before() { }
 
 	@Test
 	public void sort_desc() {

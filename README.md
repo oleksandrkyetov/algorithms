@@ -26,6 +26,11 @@ TODO Stanford:
 - Master Method
 
 
+TODO:
+
+- Add tests to check 0 and 1 size arrays passed ?
+
+
 CHECK:
 
 - Bottom Up Merge Sort

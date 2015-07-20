@@ -40,9 +40,4 @@ public class TopDownMergeSortTest {
 		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
 	}
 
-	@Test
-	public void sort_exercise() {
-		new TopDownMergeSort<Integer>().sort(new Integer[] {43, 18, 91, 64, 45, 19, 60, 80, 55, 28, 46, 31});
-	}
-
 }

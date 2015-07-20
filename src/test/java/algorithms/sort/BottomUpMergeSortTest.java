@@ -40,9 +40,4 @@ public class BottomUpMergeSortTest {
 		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
 	}
 
-	@Test
-	public void sort_exercise() {
-		new BottomUpMergeSort<Integer>().sort(new Integer[] {36, 53, 39, 61, 51, 26, 57, 86, 80, 52});
-	}
-
 }

@@ -18,8 +18,7 @@ public class BubbleSortTest {
 	private BubbleSort<String> bubbleSort;
 
 	@Before
-	public void before() {
-	}
+	public void before() { }
 
 	@Test
 	public void sort_desc() {
