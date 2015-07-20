@@ -24,7 +24,7 @@ public class MedianOfThreePivotPickerTest {
 		final int start = 0;
 		final int end = array.length;
 
-		assertEquals((start + end) / 2, medianOfThreePivotPicker.pick(array, start, end));
+		assertEquals((start + end - 1) / 2, medianOfThreePivotPicker.pick(array, start, end));
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public class MedianOfThreePivotPickerTest {
 		final int start = 3;
 		final int end = array.length;
 
-		assertEquals((start + end) / 2, medianOfThreePivotPicker.pick(array, start, end));
+		assertEquals((start + end - 1) / 2, medianOfThreePivotPicker.pick(array, start, end));
 	}
 
 }
