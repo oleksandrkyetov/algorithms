@@ -1,6 +1,6 @@
 package algorithms.sort;
 
-public interface PivotPicker<T> {
+public interface PivotPicker<T extends Comparable<T>> {
 
 	/**
 	 * Pick a pivot index

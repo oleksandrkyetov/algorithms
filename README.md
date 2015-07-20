@@ -34,6 +34,8 @@ CHECK:
 
 - Bottom Up Merge Sort
 - Bottom Up Inversions Counter
+- Two Way Partitioner
+- Three Way Partitioner
 
 
 DONE:
@@ -49,3 +51,4 @@ DONE:
 - First Element Pivot Picker
 - Last Element Pivot Picker
 - Median Of Three Pivot Picker
+- One Way Partitioner
