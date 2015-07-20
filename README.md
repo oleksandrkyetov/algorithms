@@ -12,7 +12,6 @@ TODO Princeton:
 - Shuffling
 - Convex Hull
 
-- Quick Sort
 - Quick Selection
 
 
@@ -46,3 +45,7 @@ DONE:
 - SelectionSort
 - Top Down Merge Sort
 - Top Down Inversions Counter
+- Quick Sort
+- First Element Pivot Picker
+- Last Element Pivot Picker
+- Median Of Three Pivot Picker
