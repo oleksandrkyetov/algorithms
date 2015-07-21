@@ -1,27 +1,30 @@
 package algorithms.sort.impl;
 
 import algorithms.sort.PivotPicker;
+import algorithms.utils.Pair;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Ordering;
 import org.springframework.stereotype.Component;
+
+import java.util.Comparator;
+import java.util.List;
 
 @Component
 public class MedianOfThreePivotPicker<T extends Comparable<T>> implements PivotPicker<T> {
 
 	@Override
-	// TODO Is it really a good way to get median???
 	public int pick(T[] a, int start, int end) {
-		if (a[start].compareTo(a[(start + end - 1) / 2]) > 0 && a[start].compareTo(a[end - 1]) < 0
-			|| a[start].compareTo(a[(start + end - 1) / 2]) < 0 && a[start].compareTo(a[end - 1]) > 0) {
+		final List<Pair<Integer, T>> list = ImmutableList.<Pair<Integer, T>>builder()
+			.add(Pair.of(start, a[start]))
+			.add(Pair.of((start + end - 1) / 2, a[(start + end - 1) / 2]))
+			.add(Pair.of(end - 1, a[end - 1])).build();
 
-			return start;
-		}
-
-		if (a[(start + end - 1) / 2].compareTo(a[start]) > 0 && a[(start + end - 1) / 2].compareTo(a[end - 1]) < 0
-			|| a[(start + end - 1) / 2].compareTo(a[start]) < 0 && a[(start + end - 1) / 2].compareTo(a[end - 1]) > 0) {
-
-			return (start + end - 1) / 2;
-		}
-
-		return end - 1;
+		return Ordering.from(new Comparator<Pair<Integer, T>>() {
+			@Override
+			public int compare(Pair<Integer, T> p1, Pair<Integer, T> p2) {
+				return p1.getRight().compareTo(p2.getRight());
+			}
+		}).immutableSortedCopy(list).get(1).getLeft();
 	}
 
 }

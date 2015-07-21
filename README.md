@@ -12,7 +12,8 @@ TODO Princeton:
 - Shuffling
 - Convex Hull
 
-- Quick Selection
+- Randomized Quick Selection
+- Deterministic Quick Selection
 
 
 TODO Stanford:
@@ -40,11 +41,11 @@ CHECK:
 
 DONE:
 
-- QuickFind
-- QuickUnion
-- WeightedQuickUnion
-- InsertionSort
-- SelectionSort
+- Quick Find
+- Quick Union
+- Weighted Quick Union
+- Insertion Sort
+- Selection Sort
 - Top Down Merge Sort
 - Top Down Inversions Counter
 - Quick Sort
