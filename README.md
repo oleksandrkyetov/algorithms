@@ -12,8 +12,6 @@ TODO Princeton:
 - Shuffling
 - Convex Hull
 
-- Randomized Quick Selection
-- Deterministic Quick Selection
 
 
 TODO Stanford:
@@ -26,17 +24,15 @@ TODO Stanford:
 - Master Method
 
 
-TODO:
+IN PROGRESS:
+
+- Randomized Quick Select
+- Deterministic Quick Select
+
+
+TODO ???:
 
 - Add tests to check 0 and 1 size arrays passed ?
-
-
-CHECK:
-
-- Bottom Up Merge Sort
-- Bottom Up Inversions Counter
-- Two Way Partitioner
-- Three Way Partitioner
 
 
 DONE:
@@ -47,9 +43,13 @@ DONE:
 - Insertion Sort
 - Selection Sort
 - Top Down Merge Sort
+- Bottom Up Merge Sort
 - Top Down Inversions Counter
+- Bottom Up Inversions Counter
 - Quick Sort
-- First Element Pivot Picker
-- Last Element Pivot Picker
-- Median Of Three Pivot Picker
-- One Way Partitioner
+- First Element Pivot
+- Last Element Pivot
+- Median Of Three Pivot
+- One Way Partition
+- Two Way Partition
+- Three Way Partition

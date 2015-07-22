@@ -1,6 +1,6 @@
 package algorithms.sort;
 
-import algorithms.sort.impl.FirstElementPivotPicker;
+import algorithms.sort.impl.MedianOfThreePivot;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,10 +10,10 @@ import org.mockito.runners.MockitoJUnitRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class FirstElementPivotPickerTest {
+public class MedianOfThreePivotTest {
 
 	@InjectMocks
-	private FirstElementPivotPicker<String> firstElementPivotPicker;
+	private MedianOfThreePivot<String> medianOfThreePivotPicker;
 
 	@Before
 	public void before() { }
@@ -24,7 +24,7 @@ public class FirstElementPivotPickerTest {
 		final int start = 0;
 		final int end = array.length;
 
-		assertEquals(start, firstElementPivotPicker.pick(array, start, end));
+		assertEquals((start + end - 1) / 2, medianOfThreePivotPicker.pick(array, start, end));
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public class FirstElementPivotPickerTest {
 		final int start = 3;
 		final int end = array.length;
 
-		assertEquals(start, firstElementPivotPicker.pick(array, start, end));
+		assertEquals((start + end - 1) / 2, medianOfThreePivotPicker.pick(array, start, end));
 	}
 
 }

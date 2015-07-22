@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component
-// TODO Check it
 public class BottomUpMergeSortInversionsCounter<T extends Comparable<T>> implements Counter<T> {
 
 	private long count = 0;

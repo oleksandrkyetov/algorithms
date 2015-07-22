@@ -1,6 +1,6 @@
-package algorithms.sort;
+package algorithms.partition;
 
-import algorithms.sort.impl.TwoWayPartitioner;
+import algorithms.partition.impl.TwoWayPartition;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,10 +12,10 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TwoWayPartitionerTest {
+public class TwoWayPartitionTest {
 
 	@InjectMocks
-	private TwoWayPartitioner<String> twoWayPartitioner;
+	private TwoWayPartition<String> twoWayPartitioner;
 
 	@Before
 	public void before() { }

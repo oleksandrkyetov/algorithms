@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component
-// TODO Check it
 public class BottomUpMergeSort<T extends Comparable<T>> implements Sort<T> {
 
 	@Override

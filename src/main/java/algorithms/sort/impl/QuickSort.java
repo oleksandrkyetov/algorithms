@@ -1,6 +1,6 @@
 package algorithms.sort.impl;
 
-import algorithms.sort.PivotPicker;
+import algorithms.sort.Pivot;
 import algorithms.sort.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 
 	@Autowired
-	private PivotPicker<T> pivotPicker;
+	private Pivot<T> pivot;
 
 	@Override
 	public T[] sort(T[] a) {
@@ -28,7 +28,7 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 		}
 
 		// Pick pivot according to the strategy
-		int picked = pivotPicker.pick(b, start, end);
+		int picked = pivot.pick(b, start, end);
 		// Exchange picked pivot with a first element
 		T tmp = b[picked];
 		b[picked] = b[start];

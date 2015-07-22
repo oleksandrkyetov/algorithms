@@ -1,7 +1,6 @@
 package algorithms.sort;
 
-import algorithms.sort.impl.FirstElementPivotPicker;
-import algorithms.sort.impl.MedianOfThreePivotPicker;
+import algorithms.sort.impl.MedianOfThreePivot;
 import algorithms.sort.impl.QuickSort;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,8 +16,8 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = MedianOfThreePivotPickerQuickSortTest.QuickSortTestConfiguration.class)
-public class MedianOfThreePivotPickerQuickSortTest {
+@ContextConfiguration(classes = MedianOfThreePivotQuickSortTest.QuickSortTestConfiguration.class)
+public class MedianOfThreePivotQuickSortTest {
 
 	@Autowired
 	private QuickSort<String> quickSort;
@@ -50,8 +49,8 @@ public class MedianOfThreePivotPickerQuickSortTest {
 	public static class QuickSortTestConfiguration {
 
 		@Bean
-		public PivotPicker<String> pivotPicker() {
-			return new MedianOfThreePivotPicker<String>();
+		public Pivot<String> pivotPicker() {
+			return new MedianOfThreePivot<String>();
 		}
 
 		@Bean

@@ -1,6 +1,6 @@
-package algorithms.sort;
+package algorithms.partition;
 
-public interface Partitioner<T extends Comparable<T>> {
+public interface Partition<T extends Comparable<T>> {
 
 	/**
 	 * Partition array into two half

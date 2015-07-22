@@ -1,6 +1,6 @@
-package algorithms.sort.impl;
+package algorithms.partition.impl;
 
-import algorithms.sort.Partitioner;
+import algorithms.partition.Partition;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -11,8 +11,7 @@ import java.util.Arrays;
  * @param <T>
  */
 @Component
-// TODO Check it
-public class TwoWayPartitioner<T extends Comparable<T>> implements Partitioner<T> {
+public class TwoWayPartition<T extends Comparable<T>> implements Partition<T> {
 
 	@Override
 	public T[] partition(T[] a) {

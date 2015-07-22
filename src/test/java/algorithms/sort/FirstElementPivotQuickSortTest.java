@@ -1,6 +1,6 @@
 package algorithms.sort;
 
-import algorithms.sort.impl.FirstElementPivotPicker;
+import algorithms.sort.impl.FirstElementPivot;
 import algorithms.sort.impl.QuickSort;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,8 +16,8 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = FirstElementPivotPickerQuickSortTest.QuickSortTestConfiguration.class)
-public class FirstElementPivotPickerQuickSortTest {
+@ContextConfiguration(classes = FirstElementPivotQuickSortTest.QuickSortTestConfiguration.class)
+public class FirstElementPivotQuickSortTest {
 
 	@Autowired
 	private QuickSort<String> quickSort;
@@ -49,8 +49,8 @@ public class FirstElementPivotPickerQuickSortTest {
 	public static class QuickSortTestConfiguration {
 
 		@Bean
-		public PivotPicker<String> pivotPicker() {
-			return new FirstElementPivotPicker<String>();
+		public Pivot<String> pivotPicker() {
+			return new FirstElementPivot<String>();
 		}
 
 		@Bean

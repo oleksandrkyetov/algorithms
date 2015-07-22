@@ -48,19 +48,15 @@ public class TopDownMergeSort<T extends Comparable<T>> implements Sort<T> {
 			if (leftIndex < middle && rightIndex < end) {
 				if (auxiliary[leftIndex].compareTo(auxiliary[rightIndex]) < 0) {
 					b[k] = auxiliary[leftIndex++];
-					// TODO Add count here
 				} else {
 					b[k] = auxiliary[rightIndex++];
-					// TODO Add count here
 				}
 			} else {
 				if (leftIndex >= middle && rightIndex < end) {
 					b[k] = auxiliary[rightIndex++];
-					// TODO Add count here
 				}
 				if (rightIndex >= end && leftIndex < middle) {
 					b[k] = auxiliary[leftIndex++];
-					// TODO Add count here
 				}
 			}
 			*/

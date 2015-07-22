@@ -1,6 +1,6 @@
 package algorithms.sort.impl;
 
-import algorithms.sort.PivotPicker;
+import algorithms.sort.Pivot;
 import algorithms.utils.Pair;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;
@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Component
-public class MedianOfThreePivotPicker<T extends Comparable<T>> implements PivotPicker<T> {
+public class MedianOfThreePivot<T extends Comparable<T>> implements Pivot<T> {
 
 	@Override
 	public int pick(T[] a, int start, int end) {
