@@ -1,4 +1,4 @@
-package algorithms.sort;
+package algorithms.pivot;
 
 public interface Pivot<T extends Comparable<T>> {
 

@@ -1,6 +1,6 @@
-package algorithms.sort;
+package algorithms.pivot;
 
-import algorithms.sort.impl.MedianOfThreePivot;
+import algorithms.pivot.impl.MedianOfThreePivot;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

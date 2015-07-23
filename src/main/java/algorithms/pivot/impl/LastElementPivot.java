@@ -1,6 +1,6 @@
-package algorithms.sort.impl;
+package algorithms.pivot.impl;
 
-import algorithms.sort.Pivot;
+import algorithms.pivot.Pivot;
 import org.springframework.stereotype.Component;
 
 @Component

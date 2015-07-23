@@ -13,7 +13,6 @@ TODO Princeton:
 - Convex Hull
 
 
-
 TODO Stanford:
 
 - Integer Multiplication
@@ -22,6 +21,10 @@ TODO Stanford:
 - Closest Pair Points
 - The Recursion Tree
 - Master Method
+- Heap Sort
+- Bucket Sort
+- Counting Sort
+- Radix Sort
 
 
 IN PROGRESS:

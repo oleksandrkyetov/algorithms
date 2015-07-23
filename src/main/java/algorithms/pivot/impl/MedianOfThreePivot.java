@@ -1,6 +1,6 @@
-package algorithms.sort.impl;
+package algorithms.pivot.impl;
 
-import algorithms.sort.Pivot;
+import algorithms.pivot.Pivot;
 import algorithms.utils.Pair;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;

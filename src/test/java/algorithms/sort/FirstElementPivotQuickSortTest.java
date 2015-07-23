@@ -1,6 +1,7 @@
 package algorithms.sort;
 
-import algorithms.sort.impl.FirstElementPivot;
+import algorithms.pivot.Pivot;
+import algorithms.pivot.impl.FirstElementPivot;
 import algorithms.sort.impl.QuickSort;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,7 +50,7 @@ public class FirstElementPivotQuickSortTest {
 	public static class QuickSortTestConfiguration {
 
 		@Bean
-		public Pivot<String> pivotPicker() {
+		public Pivot<String> pivot() {
 			return new FirstElementPivot<String>();
 		}
 

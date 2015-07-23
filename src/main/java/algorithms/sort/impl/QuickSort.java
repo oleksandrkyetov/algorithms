@@ -1,6 +1,6 @@
 package algorithms.sort.impl;
 
-import algorithms.sort.Pivot;
+import algorithms.pivot.Pivot;
 import algorithms.sort.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,11 +35,9 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 		b[start] = tmp;
 
 		// Sort array
-		int pivot = start;
-		int edge = pivot + 1;
-
+		int edge = start + 1;
 		for(int index = edge; index < end; index++) {
-			if (b[index].compareTo(b[pivot]) < 0) {
+			if (b[index].compareTo(b[start]) < 0) {
 				tmp = b[index];
 				b[index] = b[edge];
 				b[edge++] = tmp;
@@ -47,8 +45,8 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 		}
 
 		tmp = b[--edge];
-		b[edge] = b[pivot];
-		b[pivot] = tmp;
+		b[edge] = b[start];
+		b[start] = tmp;
 
 		sort(b, start, edge);
 		sort(b, edge + 1, end);

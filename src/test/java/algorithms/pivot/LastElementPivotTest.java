@@ -1,6 +1,6 @@
-package algorithms.sort;
+package algorithms.pivot;
 
-import algorithms.sort.impl.LastElementPivot;
+import algorithms.pivot.impl.LastElementPivot;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
