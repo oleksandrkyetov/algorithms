@@ -24,8 +24,6 @@ public class QuickSelect<T extends Comparable<T>> implements Select<T> {
 		// Pick pivot according to the strategy
 		int picked = pivot.pick(b, start, end) ;
 
-		System.out.println(Arrays.toString(b));
-
 		// Exchange picked pivot with first element
 		T tmp = b[start];
 		b[start] = b[picked];
@@ -46,14 +44,11 @@ public class QuickSelect<T extends Comparable<T>> implements Select<T> {
 		b[edge] = b[start];
 		b[start] = tmp;
 
-		System.out.println("(" + start + ", " + end + ")" + ": " + "(" + order + ", " + picked + ", " + edge + ")");
-		System.out.println(Arrays.toString(b));
-
 		// Decide on what part of array to work next
-		if (order < edge - start) {
+		if (order < edge) {
 			return select(b, order, start, edge);
-		} else if (order > edge - start) {
-			return select(b, order - edge - 1, edge + 1, end);
+		} else if (order > edge) {
+			return select(b, order, edge + 1, end);
 		} else {
 			return b[edge];
 		}

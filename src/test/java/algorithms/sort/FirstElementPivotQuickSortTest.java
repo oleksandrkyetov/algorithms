@@ -51,12 +51,12 @@ public class FirstElementPivotQuickSortTest {
 
 		@Bean
 		public Pivot<String> pivot() {
-			return new FirstElementPivot<String>();
+			return new FirstElementPivot<>();
 		}
 
 		@Bean
 		public QuickSort<String> quickSort() {
-			return new QuickSort<String>();
+			return new QuickSort<>();
 		}
 	}
 

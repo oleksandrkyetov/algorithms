@@ -51,12 +51,12 @@ public class LastElementPivotQuickSortTest {
 
 		@Bean
 		public Pivot<String> pivot() {
-			return new LastElementPivot<String>();
+			return new LastElementPivot<>();
 		}
 
 		@Bean
 		public QuickSort<String> quickSort() {
-			return new QuickSort<String>();
+			return new QuickSort<>();
 		}
 	}
 

@@ -25,13 +25,7 @@ TODO Stanford:
 - Bucket Sort
 - Counting Sort
 - Radix Sort
-
-
-IN PROGRESS:
-
-- Randomized Quick Select
-- Deterministic Quick Select
-
+- Random Contraction
 
 TODO ???:
 
@@ -53,6 +47,10 @@ DONE:
 - First Element Pivot
 - Last Element Pivot
 - Median Of Three Pivot
+- Random Element Pivot
+- Median Of Medians Pivot
 - One Way Partition
 - Two Way Partition
 - Three Way Partition
+- Randomized Quick Select
+- Deterministic Quick Select

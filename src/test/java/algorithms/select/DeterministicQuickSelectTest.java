@@ -1,8 +1,11 @@
 package algorithms.select;
 
 import algorithms.pivot.Pivot;
+import algorithms.pivot.impl.MedianOfMediansPivot;
 import algorithms.pivot.impl.RandomElementPivot;
 import algorithms.select.impl.QuickSelect;
+import algorithms.sort.Sort;
+import algorithms.sort.impl.TopDownMergeSort;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,8 +18,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = RandomizedQuickSelectTest.QuickSelectTestConfiguration.class)
-public class RandomizedQuickSelectTest {
+@ContextConfiguration(classes = DeterministicQuickSelectTest.QuickSelectTestConfiguration.class)
+public class DeterministicQuickSelectTest {
 
 	@Autowired
 	private QuickSelect<String> quickSelect;
@@ -45,7 +48,7 @@ public class RandomizedQuickSelectTest {
 
 		@Bean
 		public Pivot<String> pivot() {
-			return new RandomElementPivot<>();
+			return new MedianOfMediansPivot<>();
 		}
 
 		@Bean

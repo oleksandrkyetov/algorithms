@@ -29,4 +29,9 @@ public class Pair<L, R> {
 		return Pair.of(pair.getLeft(), pair.getRight());
 	}
 
+	@Override
+	public String toString() {
+		return "[" + String.valueOf(left) + ", " + String.valueOf(right) + "]";
+	}
+
 }

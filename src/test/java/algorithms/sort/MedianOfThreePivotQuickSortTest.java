@@ -51,12 +51,12 @@ public class MedianOfThreePivotQuickSortTest {
 
 		@Bean
 		public Pivot<String> pivot() {
-			return new MedianOfThreePivot<String>();
+			return new MedianOfThreePivot<>();
 		}
 
 		@Bean
 		public QuickSort<String> quickSort() {
-			return new QuickSort<String>();
+			return new QuickSort<>();
 		}
 	}
 
