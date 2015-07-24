@@ -2,10 +2,7 @@ package algorithms.select;
 
 import algorithms.pivot.Pivot;
 import algorithms.pivot.impl.MedianOfMediansPivot;
-import algorithms.pivot.impl.RandomElementPivot;
 import algorithms.select.impl.QuickSelect;
-import algorithms.sort.Sort;
-import algorithms.sort.impl.TopDownMergeSort;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

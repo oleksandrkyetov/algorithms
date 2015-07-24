@@ -20,7 +20,7 @@ public class MedianOfThreePivot<T extends Comparable<T>> implements Pivot<T> {
 
 		Arrays.sort(b, 0, LENGTH, (Pair<Integer, T> p1, Pair<Integer, T> p2) -> p1.getRight().compareTo(p2.getRight()));
 
-		return b[1].getLeft() - start;
+		return b[1].getLeft();
 	}
 
 }

@@ -18,7 +18,7 @@ public class MedianOfMediansPivot<T extends Comparable<T>> implements Pivot<T> {
 			b[i - start] = Pair.of(i, a[i]);
 		}
 
-		return pick(b, LENGTH) - start;
+		return pick(b, LENGTH);
 	}
 
 	private int pick(Pair<Integer, T>[] b, int length) {
