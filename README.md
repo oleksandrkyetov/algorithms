@@ -1,16 +1,24 @@
 TODO Princeton:
 
 - Percolation
+- Bouncing Balls
 
 - Stack
 - Resizing Array
 - Linked List
+- Bag
 - Queue
 - Deque
-
 - Shell Sort
+- Heapsort
 - Shuffling
 - Convex Hull
+- Unordered Priority Queue
+- Ordered Priority Queue
+- Binary Heap
+- Ternary Heap
+- Symbol Table
+- Binary Search
 
 
 TODO Stanford:
@@ -26,6 +34,7 @@ TODO Stanford:
 - Counting Sort
 - Radix Sort
 - Random Contraction
+
 
 TODO ???:
 
