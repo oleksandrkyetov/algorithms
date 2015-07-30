@@ -24,9 +24,7 @@ public class DefaultQuickUnionTest {
 	public void union_twoElementArray() {
 		final String[] elements = new String[] {"0", "1"};
 
-		assertEquals(
-				Arrays.toString(new int[] {0, 0}),
-				Arrays.toString(defaultQuickUnion.init(elements).union("0", "1").getIndexes()));
+		assertTrue(Arrays.equals(new int[] {0, 0}, defaultQuickUnion.init(elements).union("0", "1").getIndexes()));
 	}
 
 	@Test

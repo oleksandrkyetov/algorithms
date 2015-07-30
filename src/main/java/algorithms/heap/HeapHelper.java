@@ -15,14 +15,25 @@ public final class HeapHelper {
 		} else if (rightIndex > b.length - 1 || b[rightIndex] == null) {
 			maxIndex = leftIndex;
 		} else {
-			maxIndex = b[leftIndex].compareTo(b[rightIndex]) > 0 ? leftIndex : rightIndex;
+			maxIndex = Helper.greater(b[leftIndex], b[rightIndex]) ? leftIndex : rightIndex;
 		}
 
-		if (maxIndex < b.length && b[maxIndex] != null && b[index].compareTo(b[maxIndex]) < 0) {
+		if (maxIndex < b.length && b[maxIndex] != null && Helper.less(b[index], b[maxIndex])) {
 			// Swap greater child element with current element
 			Helper.swap(b, index, maxIndex);
 			// Proceed with sink
 			sink(b, maxIndex);
+		}
+	}
+
+	public static <T extends Comparable<T>> void swim(T[] b, int index) {
+		int parentIndex = Helper.odd(index) ? (index - 1) / 2 : (index - 2) / 2;
+
+		if (parentIndex > -1 && Helper.greater(b[index], b[parentIndex])) {
+			// Swap smaller parent element with current element
+			Helper.swap(b, index, parentIndex);
+			// Proceed with swim
+			swim(b, parentIndex);
 		}
 	}
 

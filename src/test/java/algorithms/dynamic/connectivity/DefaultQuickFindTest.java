@@ -26,9 +26,7 @@ public class DefaultQuickFindTest {
 	public void union_twoElementArray() {
 		final String[] elements = new String[] {"0", "1"};
 
-		assertEquals(
-				Arrays.toString(new int[] {1, 1}),
-				Arrays.toString(defaultQuickFind.init(elements).union("0", "1").getIndexes()));
+		assertTrue(Arrays.equals(new int[] {1, 1}, defaultQuickFind.init(elements).union("0", "1").getIndexes()));
 	}
 
 	@Test
@@ -43,18 +41,6 @@ public class DefaultQuickFindTest {
 		final String[] elements = new String[] {"0", "1", "2"};
 
 		assertFalse(defaultQuickFind.init(elements).union("0", "1").connected("0", "2"));
-	}
-
-	@Test
-	public void union_week1_question1() {
-		final String[] elements = new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-
-		assertEquals(
-				Arrays.toString(new int[] {1, 1, 1, 1, 6, 1, 6, 7, 8, 1}),
-				Arrays.toString(defaultQuickFind.init(elements)
-						.union("5", "2").union("0", "2").union("5", "9")
-						.union("2", "1").union("3", "9").union("4", "6")
-						.getIndexes()));
 	}
 
 }

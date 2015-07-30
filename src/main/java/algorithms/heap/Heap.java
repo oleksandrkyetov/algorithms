@@ -6,6 +6,6 @@ public interface Heap<T extends Comparable<T>> {
 
 	public Heap<T> insert(T e);
 
-	public Heap<T> pop();
+	public T pop();
 
 }

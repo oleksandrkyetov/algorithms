@@ -26,7 +26,7 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
 	}
 
 	@Override
-	public Heap<T> pop() {
+	public T pop() {
 		return null;
 	}
 

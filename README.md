@@ -4,7 +4,6 @@ TODO Princeton:
 - Bouncing Balls
 
 - Stack
-- Resizing Array
 - Linked List
 - Bag
 - Queue
@@ -44,7 +43,7 @@ TODO ???:
 DOING:
 
 - Binary Heap
-
+- Resizing Array
 
 DONE:
 

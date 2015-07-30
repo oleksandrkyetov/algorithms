@@ -14,9 +14,9 @@ public class WeightedQuickUnion<T extends Comparable<T>> implements DynamicConne
 
 	@Override
 	public DynamicConnectivity<T> init(T[] a) {
-		this.elements = Arrays.copyOf(a, a.length);
+		elements = Arrays.copyOf(a, a.length);
 
-		this.indexes = new int[elements.length];
+		indexes = new int[elements.length];
 		for (int i = 0; i < indexes.length; i++) {
 			indexes[i] = i;
 		}
