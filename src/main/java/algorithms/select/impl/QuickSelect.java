@@ -2,6 +2,7 @@ package algorithms.select.impl;
 
 import algorithms.pivot.Pivot;
 import algorithms.select.Select;
+import algorithms.utils.Helper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,24 +26,18 @@ public class QuickSelect<T extends Comparable<T>> implements Select<T> {
 		int picked = pivot.pick(b, start, end) ;
 
 		// Exchange picked pivot with first element
-		T tmp = b[start];
-		b[start] = b[picked];
-		b[picked] = tmp;
+		Helper.swap(b, start, picked);
 
 		// Sort array
 		int edge = start + 1;
 		for (int index = start; index < end; index++) {
 			if (b[index].compareTo(b[start]) < 0) {
-				tmp = b[index];
-				b[index] = b[edge];
-				b[edge++] = tmp;
+				Helper.swap(b, index, edge++);
 			}
 		}
 
 		// Switch pivot with min/max edge
-		tmp = b[--edge];
-		b[edge] = b[start];
-		b[start] = tmp;
+		Helper.swap(b, start, --edge);
 
 		// Decide on what part of array to work next
 		if (order < edge) {

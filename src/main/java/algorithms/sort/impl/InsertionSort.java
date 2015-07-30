@@ -1,6 +1,7 @@
 package algorithms.sort.impl;
 
 import algorithms.sort.Sort;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -15,10 +16,7 @@ public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
 		for (int i = 0; i < b.length; i++) {
 			int k = i;
 			while (k > 0 && b[k].compareTo(b[k - 1]) < 0) {
-				T tmp = b[k - 1];
-				b[k - 1] = b[k];
-				b[k] = tmp;
-				k--;
+				Helper.swap(b, k - 1, k--);
 			}
 		}
 

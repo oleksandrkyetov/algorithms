@@ -1,6 +1,7 @@
 package algorithms.sort.impl;
 
 import algorithms.sort.Sort;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -22,9 +23,7 @@ public class BubbleSort<T extends Comparable<T>> implements Sort<T> {
 
 				for (int i = 1; i < n; i++) {
 					if (b[i - 1].compareTo(b[i]) > 0 ) {
-						T tmp = b[i - 1];
-						b[i - 1] = b[i];
-						b[i] = tmp;
+						Helper.swap(b, i - 1, i);
 
 						swapped = true;
 					}

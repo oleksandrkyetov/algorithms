@@ -1,6 +1,7 @@
 package algorithms.partition.impl;
 
 import algorithms.partition.Partition;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -22,15 +23,11 @@ public class OneWayPartition<T extends Comparable<T>> implements Partition<T> {
 
 		for(int index = 1; index < b.length; index++) {
 			if (b[index].compareTo(b[pivot]) < 0) {
-				T tmp = b[index];
-				b[index] = b[edge];
-				b[edge++] = tmp;
+				Helper.swap(b, index, edge++);
 			}
 		}
 
-		T tmp = b[--edge];
-		b[edge] = b[pivot];
-		b[pivot] = tmp;
+		Helper.swap(b, pivot, --edge);
 
 		return b;
 	}

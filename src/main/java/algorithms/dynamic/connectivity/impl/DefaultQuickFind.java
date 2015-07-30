@@ -12,8 +12,8 @@ public class DefaultQuickFind<T extends Comparable<T>> implements DynamicConnect
 	private T[] elements;
 
 	@Override
-	public DynamicConnectivity<T> init(T[] array) {
-		this.elements = Arrays.copyOf(array, array.length);
+	public DynamicConnectivity<T> init(T[] a) {
+		this.elements = Arrays.copyOf(a, a.length);
 
 		this.indexes = new int[elements.length];
 		for (int i = 0; i < indexes.length; i++) {

@@ -15,10 +15,10 @@ TODO Princeton:
 - Convex Hull
 - Unordered Priority Queue
 - Ordered Priority Queue
-- Binary Heap
 - Ternary Heap
 - Symbol Table
 - Binary Search
+- Top Down Heap Builder
 
 
 TODO Stanford:
@@ -39,6 +39,11 @@ TODO Stanford:
 TODO ???:
 
 - Add tests to check 0 and 1 size arrays passed ?
+
+
+DOING:
+
+- Binary Heap
 
 
 DONE:
@@ -63,3 +68,4 @@ DONE:
 - Three Way Partition
 - Randomized Quick Select
 - Deterministic Quick Select
+- Bottom Up Heap Builder

@@ -1,6 +1,7 @@
 package algorithms.partition.impl;
 
 import algorithms.partition.Partition;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -37,14 +38,10 @@ public class TwoWayPartition<T extends Comparable<T>> implements Partition<T> {
 				break;
 			}
 
-			T tmp = b[i];
-			b[i] = b[j];
-			b[j] = tmp;
+			Helper.swap(b, i, j);
 		}
 
-		T tmp = b[j];
-		b[j] = b[0];
-		b[0] = tmp;
+		Helper.swap(b, 0, j);
 
 		return b;
 	}

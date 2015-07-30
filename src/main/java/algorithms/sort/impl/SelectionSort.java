@@ -1,6 +1,7 @@
 package algorithms.sort.impl;
 
 import algorithms.sort.Sort;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -21,9 +22,7 @@ public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 				}
 			}
 
-			T tmp = b[i];
-			b[i] = b[min];
-			b[min] = tmp;
+			Helper.swap(b, i, min);
 		}
 
 		return b;

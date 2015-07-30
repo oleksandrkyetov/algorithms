@@ -1,6 +1,7 @@
 package algorithms.partition.impl;
 
 import algorithms.partition.Partition;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -23,18 +24,9 @@ public class ThreeWayPartition<T extends Comparable<T>> implements Partition<T> 
 
 		while (i <= j) {
 			if(b[i].compareTo(b[pivot]) < 0) {
-				T tmp = b[i];
-				b[i] = b[pivot];
-				b[pivot] = tmp;
-
-				i++;
-				pivot++;
+				Helper.swap(b, i++, pivot++);
 			} else if(b[i].compareTo(b[pivot]) > 0) {
-				T tmp = b[i];
-				b[i] = b[j];
-				b[j] = tmp;
-
-				j--;
+				Helper.swap(b, i, j--);
 			} else {
 				i++;
 			}
