@@ -1,6 +1,9 @@
-## Bunch of algorithms and data structures written in Java ##
+## Algorithms and Data Structures (Java) ##
+
 This is by NO means production library, so do not use it unless you 100% certain what you are doing
 
+
+## TODO ##
 
 TODO Princeton:
 
@@ -72,4 +75,3 @@ DONE:
 - Bottom Up Heap Builder
 - Resizing Array
 - Binary Heap
-
