@@ -1,11 +1,10 @@
 package algorithms.resizable.impl;
 
 import algorithms.resizable.Resizable;
+import algorithms.utils.Helper;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class ArrayResizable<T extends Comparable<T>> implements Resizable<T> {
@@ -15,8 +14,8 @@ public class ArrayResizable<T extends Comparable<T>> implements Resizable<T> {
 
 	@Override
 	public Resizable<T> init(T[] a) {
-		elements = Arrays.copyOf(a, a.length);
-		size = elements.length;
+		elements = Arrays.copyOf(a, a.length * 2);
+		size = a.length;
 
 		return this;
 	}
@@ -33,6 +32,27 @@ public class ArrayResizable<T extends Comparable<T>> implements Resizable<T> {
 	}
 
 	@Override
+	public T remove(int i) {
+		T element = elements[i];
+
+		// Shrink size
+		int capacity = elements.length;
+		if (size <= capacity / 4) {
+			capacity = capacity / 2;
+		}
+
+		// Copy array
+		T[] tmp = Arrays.copyOf(elements, capacity);
+		for (int k = 0; k < size - 1 ; k++) {
+			tmp[k] = elements[k < i ? k : k + 1];
+		}
+		elements = tmp;
+
+		size--;
+		return element;
+	}
+
+	@Override
 	public T set(int i, T e) {
 		T element = elements[i];
 		elements[i] = e;
@@ -42,14 +62,14 @@ public class ArrayResizable<T extends Comparable<T>> implements Resizable<T> {
 
 	@Override
 	public T get(int i) {
-		if (size <= elements.length / 4) {
-			elements = Arrays.copyOf(elements, elements.length / 2);
-		}
+		return elements[i];
+	}
 
-		T element = elements[--size];
-		elements[size] = null;
+	@Override
+	public Resizable<T> swap(int i, int j) {
+		Helper.swap(elements, i, j);
 
-		return element;
+		return this;
 	}
 
 	@Override

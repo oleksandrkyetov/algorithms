@@ -2,6 +2,7 @@ package algorithms.heap.builder;
 
 import algorithms.heap.builder.impl.BottomUpHeapBuilder;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,7 +22,7 @@ public class BottomUpHeapBuilderTest {
 	public void before() { }
 
 	@Test
-	public void build_threeNodes_noSinks() {
+	public void build_array_threeNodes_noSinks() {
 		final String[] initialArray = new String[] {"3", "2", "1"};
 		final String[] expectedArray = new String[] {"3", "2", "1"};
 
@@ -31,7 +32,7 @@ public class BottomUpHeapBuilderTest {
 	}
 
 	@Test
-	public void build_threeNodes_oneSink() {
+	public void build_array_threeNodes_oneSink() {
 		final String[] initialArray = new String[] {"3", "4", "5"};
 		final String[] expectedArray = new String[] {"5", "4", "3"};
 
@@ -41,7 +42,7 @@ public class BottomUpHeapBuilderTest {
 	}
 
 	@Test
-	public void build_twoNodes_oneSink() {
+	public void build_array_twoNodes_oneSink() {
 		final String[] initialArray = new String[] {"1", "2"};
 		final String[] expectedArray = new String[] {"2", "1"};
 
@@ -51,7 +52,7 @@ public class BottomUpHeapBuilderTest {
 	}
 
 	@Test
-	public void build_fiveNodes_twoSinks() {
+	public void build_array_fiveNodes_twoSinks() {
 		final String[] initialArray = new String[] {"1", "2", "3", "4", "5"};
 		final String[] expectedArray = new String[] {"5", "4", "3", "1", "2"};
 
@@ -61,15 +62,27 @@ public class BottomUpHeapBuilderTest {
 	}
 
 	@Test
-	public void build_test() {
-		/*
-		final Integer[] initialArray = new Integer[] {"1", "2", "3", "4", "5"};
+	@Ignore
+	public void build_resizable_threeNodes_noSinks() {
 
-		final Integer[] actualArray = new BottomUpHeapBuilder<Integer>().build(initialArray);
+	}
 
-		System.out.println(Arrays.println*);
-		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
-		*/
+	@Test
+	@Ignore
+	public void build_resizable_threeNodes_oneSink() {
+
+	}
+
+	@Test
+	@Ignore
+	public void build_resizable_twoNodes_oneSink() {
+
+	}
+
+	@Test
+	@Ignore
+	public void build_resizable_fiveNodes_twoSinks() {
+
 	}
 
 }

@@ -1,3 +1,7 @@
+## Bunch of algorithms and data structures written in Java ##
+This is by NO means production library, so do not use it unless you 100% certain what you are doing
+
+
 TODO Princeton:
 
 - Percolation
@@ -42,8 +46,6 @@ TODO ???:
 
 DOING:
 
-- Binary Heap
-- Resizing Array
 
 DONE:
 
@@ -68,3 +70,6 @@ DONE:
 - Randomized Quick Select
 - Deterministic Quick Select
 - Bottom Up Heap Builder
+- Resizing Array
+- Binary Heap
+

@@ -33,24 +33,41 @@ public class ArrayResizableTest {
 	}
 
 	@Test
-	public void set() {
-
-	}
-
-	@Test
-	public void get_sizeHalves() {
+	public void remove_sizeHalves() {
 		final Integer[] elements = new Integer[] {1, 2};
 
 		arrayResizable.init(elements).add(3).add(4).add(5);
-		arrayResizable.get(1);
-		arrayResizable.get(1);
-		arrayResizable.get(1);
-		Integer element = arrayResizable.get(0);
+		arrayResizable.remove(1);
+		arrayResizable.remove(1);
+		arrayResizable.remove(1);
+		final Integer element = arrayResizable.remove(0);
 
-		assertEquals(Integer.valueOf(0), element);
+		assertEquals(Integer.valueOf(1), element);
 		assertEquals(1, arrayResizable.getSize());
 		assertEquals(4, arrayResizable.getCapacity());
 		assertTrue(Arrays.equals(new Integer[] {5}, arrayResizable.getElements()));
+	}
+
+	@Test
+	public void set() {
+		final Integer[] elements = new Integer[] {1, 2};
+
+		arrayResizable.init(elements).set(1, 3);
+
+		assertEquals(2, arrayResizable.getSize());
+		assertEquals(4, arrayResizable.getCapacity());
+		assertTrue(Arrays.equals(new Integer[] {1, 3}, arrayResizable.getElements()));
+	}
+
+	@Test
+	public void get() {
+		final Integer[] elements = new Integer[] {1, 2};
+
+		final Integer element = arrayResizable.init(elements).get(1);
+		assertEquals(Integer.valueOf(2), element);
+		assertEquals(2, arrayResizable.getSize());
+		assertEquals(4, arrayResizable.getCapacity());
+		assertTrue(Arrays.equals(new Integer[] {1, 2}, arrayResizable.getElements()));
 	}
 
 }

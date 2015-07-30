@@ -2,22 +2,28 @@ package algorithms.heap.builder.impl;
 
 import algorithms.heap.HeapHelper;
 import algorithms.heap.builder.HeapBuilder;
+import algorithms.resizable.Resizable;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
 
 @Component
 public class BottomUpHeapBuilder<T extends Comparable<T>> implements HeapBuilder<T> {
 
 	@Override
 	public T[] build(T[] a) {
-		T[] b = Arrays.copyOf(a, a.length);
-
-		for (int i = b.length - 1; i > -1; i--) {
-			HeapHelper.sink(b, i);
+		for (int i = a.length - 1; i > -1; i--) {
+			HeapHelper.sink(a, i);
 		}
 
-		return b;
+		return a;
+	}
+
+	@Override
+	public Resizable<T> build(Resizable<T> r) {
+		for (int i = r.getSize() - 1; i > -1; i--) {
+			HeapHelper.sink(r, i);
+		}
+
+		return r;
 	}
 
 }

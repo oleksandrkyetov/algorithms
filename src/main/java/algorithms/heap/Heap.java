@@ -2,10 +2,14 @@ package algorithms.heap;
 
 public interface Heap<T extends Comparable<T>> {
 
-	public Heap<T> init(T[] a);
+	Heap<T> init(T[] a);
 
-	public Heap<T> insert(T e);
+	Heap<T> add(T e);
 
-	public T pop();
+	T poll();
+
+	T peek();
+
+	T[] getElements();
 
 }
