@@ -39,7 +39,7 @@ TODO Stanford:
 - Bucket Sort
 - Counting Sort
 - Radix Sort
-- Random Contraction
+- Random Contraction (Min Cut)
 
 
 TODO ???:
