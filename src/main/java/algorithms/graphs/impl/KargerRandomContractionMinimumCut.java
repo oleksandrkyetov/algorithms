@@ -1,6 +1,6 @@
-package algorithms.graph.impl;
+package algorithms.graphs.impl;
 
-import algorithms.graph.MinimumCut;
+import algorithms.graphs.MinimumCut;
 import algorithms.utils.Pair;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ import java.util.Random;
  * TODO Optimize algorithms search and size usage
  */
 @Component
-public class RrandomContractionMinimumCut implements MinimumCut {
+public class KargerRandomContractionMinimumCut implements MinimumCut {
 
 	private List<Pair<String, List<String>>> adjacencyList;
 //	private List<Pair<String, String>> edgeList;

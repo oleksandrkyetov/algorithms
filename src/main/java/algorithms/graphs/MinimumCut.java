@@ -1,9 +1,8 @@
-package algorithms.graph;
+package algorithms.graphs;
 
 import algorithms.utils.Pair;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * TODO Use custom data structures instead of Java internal ones
