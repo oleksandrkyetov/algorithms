@@ -4,6 +4,7 @@ import algorithms.graphs.MinimumCut;
 import algorithms.utils.Pair;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -38,36 +39,58 @@ public class KargerRandomContractionMinimumCut implements MinimumCut {
 	public int find() {
 		final Random random = new Random();
 
+		//System.out.println("Log");
 		// Repeat contraction while there is at least two vertices in the graph
 		while(adjacencyList.size() > 2) {
 			int indexToSuccess = random.nextInt(adjacencyList.size());
 			final String elementToSuccess = adjacencyList.get(indexToSuccess).getLeft();
 			final List<String> elementToSuccessVertices = adjacencyList.get(indexToSuccess).getRight();
 
-			int indexToRemove = random.nextInt(elementToSuccessVertices.size());
-			final String elementToRemove = elementToSuccessVertices.get(indexToRemove);
-			final List<String> elementToRemoveVertices = adjacencyList.get(indexToSuccess).getRight();
+			int indexToRemoveLocal = random.nextInt(elementToSuccessVertices.size());
+			final String elementToRemove = elementToSuccessVertices.get(indexToRemoveLocal);
+			int indexToRemove = -1;
+			for (int i = 0; i < adjacencyList.size(); i++) {
+				if (elementToRemove.equals(adjacencyList.get(i).getLeft())) {
+					indexToRemove = i;
+				}
+			}
+			final List<String> elementToRemoveVertices = adjacencyList.get(indexToRemove).getRight();
 
 			for (Pair<String, List<String>> pair : adjacencyList) {
 				if (elementToRemoveVertices.contains(pair.getLeft())) {
-					pair.getRight().remove(elementToRemove);
+					int countRemoveToSuccess = 0;
+					while(pair.getRight().remove(elementToRemove)) {
+						countRemoveToSuccess++;
+					}
 
 					// If successor copy vertices to update into it otherwise replace remove with successor
 					if (pair.getLeft().equals(elementToSuccess)) {
 						pair.getRight().addAll(elementToRemoveVertices);
 						// Remove loop edges
-						pair.getRight().remove(elementToSuccess);
+						pair.getRight().removeAll(Collections.singleton(elementToSuccess));
 					} else {
-						pair.getRight().add(elementToSuccess);
+						while(countRemoveToSuccess > 0) {
+							pair.getRight().add(elementToSuccess);
+							countRemoveToSuccess--;
+						}
 					}
 				}
 			}
 
-			// Remove element
 			adjacencyList.remove(indexToRemove);
+
+			//System.out.println("Element To Success: " + elementToSuccess + ", Element To Remove: " + elementToRemove);
+			for (Pair<String, List<String>> pair : adjacencyList) {
+				//System.out.println("Vertex: " + pair.getLeft() + ", Neighbours: " + pair.getRight());
+			}
+			//System.out.println("");
 		}
 
 		// Number of the edges from first vertex to second vertex (two last remaining vertex)
+		if (adjacencyList.get(0).getRight().size() != adjacencyList.get(1).getRight().size()) {
+			throw new IllegalArgumentException("Oooops ...");
+		}
+
 		return adjacencyList.get(0).getRight().size();
 	}
 
