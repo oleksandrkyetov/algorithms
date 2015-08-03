@@ -1,6 +1,6 @@
-package algorithms.graphs.impl;
+package algorithms._trash.graphs.impl;
 
-import algorithms.graphs.MinimumCut;
+import algorithms._trash.graphs.MinimumCut;
 import algorithms.utils.Pair;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package algorithms.graphs;
+package algorithms._trash.graphs;
 
 import algorithms.utils.Pair;
 

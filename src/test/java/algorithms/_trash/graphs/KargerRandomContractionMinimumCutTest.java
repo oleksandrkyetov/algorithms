@@ -1,6 +1,6 @@
-package algorithms.graphs;
+package algorithms._trash.graphs;
 
-import algorithms.graphs.impl.KargerRandomContractionMinimumCut;
+import algorithms._trash.graphs.impl.KargerRandomContractionMinimumCut;
 import algorithms.utils.Pair;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
