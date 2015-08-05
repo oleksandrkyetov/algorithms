@@ -1,6 +1,6 @@
 package algorithms._trash.graphs;
 
-import algorithms._trash.graphs.impl.KargerRandomContractionMinimumCut;
+import algorithms._trash.graphs.impl.KargerRandomContractionMinimumCutFinder;
 import algorithms.utils.Pair;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
@@ -16,10 +16,10 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class KargerRandomContractionMinimumCutTest {
+public class KargerRandomContractionMinimumCutFinderTest {
 
 	@InjectMocks
-	private KargerRandomContractionMinimumCut kargerRandomContractionMinimumCut;
+	private KargerRandomContractionMinimumCutFinder kargerRandomContractionMinimumCut;
 
 	@Test
 	public void find() {

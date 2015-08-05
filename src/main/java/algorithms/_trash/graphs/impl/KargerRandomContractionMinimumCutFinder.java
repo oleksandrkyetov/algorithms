@@ -1,6 +1,6 @@
 package algorithms._trash.graphs.impl;
 
-import algorithms._trash.graphs.MinimumCut;
+import algorithms._trash.graphs.MinimumCutFinder;
 import algorithms.utils.Pair;
 import org.springframework.stereotype.Component;
 
@@ -14,13 +14,13 @@ import java.util.Random;
  * TODO Optimize algorithms search and size usage
  */
 @Component
-public class KargerRandomContractionMinimumCut implements MinimumCut {
+public class KargerRandomContractionMinimumCutFinder implements MinimumCutFinder {
 
 	private List<Pair<String, List<String>>> adjacencyList;
 //	private List<Pair<String, String>> edgeList;
 
 	@Override
-	public MinimumCut init(final List<Pair<String, List<String>>> adjacencyList) {
+	public MinimumCutFinder init(final List<Pair<String, List<String>>> adjacencyList) {
 		this.adjacencyList = new LinkedList<>();
 		for (Pair<String, List<String>> pair : adjacencyList) {
 			final String left = pair.getLeft();
@@ -96,7 +96,7 @@ public class KargerRandomContractionMinimumCut implements MinimumCut {
 
 	/*
 	@Override
-	public MinimumCut init(final List<Pair<String, String>> edgeList) {
+	public MinimumCutFinder init(final List<Pair<String, String>> edgeList) {
 		this.edgeList = new LinkedList<>();
 		for (Pair<String, String> pair : edgeList) {
 			this.edgeList.add(Pair.from(pair));
