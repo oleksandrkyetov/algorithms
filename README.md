@@ -5,6 +5,13 @@ This is by NO means production library, so do not use it unless you 100% certain
 
 ## TODO ##
 
+TODO:
+
+- Majority Element (http://www.cs.utexas.edu/~moore/best-ideas/mjrty/)
+- Excel Sheet Column Title
+- Merge Sorted Array
+
+
 TODO Princeton:
 
 - Percolation
