@@ -5,7 +5,7 @@ This is by NO means production library, so do not use it unless you 100% certain
 
 ## TODO ##
 
-TODO:
+Leetcode:
 
 - Majority Element (http://www.cs.utexas.edu/~moore/best-ideas/mjrty/)
 - Excel Sheet Column Title
@@ -19,14 +19,9 @@ TODO:
 - Contains Duplicate (http://www.geeksforgeeks.org/find-the-two-repeating-elements-in-a-given-array/)
 
 
-
-
-
-TODO Princeton:
-
+TODO:
 - Percolation
 - Bouncing Balls
-
 - Stack
 - Linked List
 - Bag
@@ -42,10 +37,8 @@ TODO Princeton:
 - Symbol Table
 - Binary Search
 - Top Down Heap Builder
-
-
-TODO Stanford:
-
+- 2-3 Search Tree
+- Red-Black Binary Search Tree
 - Integer Multiplication
 - Karatsuba Multiplication
 - Strassen's Subcubic Matrix Multiplication
@@ -57,14 +50,6 @@ TODO Stanford:
 - Counting Sort
 - Radix Sort
 - Karger Random Contraction (Min Cut)
-
-
-TODO ???:
-
-- Add tests to check 0 and 1 size arrays passed ?
-
-
-DOING:
 
 
 DONE:
