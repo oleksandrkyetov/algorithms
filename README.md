@@ -10,6 +10,16 @@ TODO:
 - Majority Element (http://www.cs.utexas.edu/~moore/best-ideas/mjrty/)
 - Excel Sheet Column Title
 - Merge Sorted Array
+- Pascal's Triangle (http://www.geeksforgeeks.org/pascal-triangle/)
+- Valid Anagram (http://interactivepython.org/courselib/static/pythonds/AlgorithmAnalysis/AnAnagramDetectionExample.html)
+- Lowest Common Ancestor of a Binary Search Tree (http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/)
+- Palindrome Linked List (http://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/)
+- Implement Queue using Stacks (http://www.geeksforgeeks.org/queue-using-stacks/)
+- Power of Two
+- Contains Duplicate (http://www.geeksforgeeks.org/find-the-two-repeating-elements-in-a-given-array/)
+
+
+
 
 
 TODO Princeton:

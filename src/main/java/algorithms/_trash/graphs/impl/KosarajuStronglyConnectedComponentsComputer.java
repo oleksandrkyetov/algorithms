@@ -3,25 +3,24 @@ package algorithms._trash.graphs.impl;
 import algorithms._trash.graphs.StronglyConnectedComponentsComputer;
 import algorithms._trash.graphs.domain.Vertex;
 import algorithms.utils.Pair;
+import com.google.common.collect.Ordering;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class KosarajuStronglyConnectedComponentsComputer implements StronglyConnectedComponentsComputer {
 
-	private List<Vertex> vertices = new ArrayList<>();
+	private List<Vertex> vertices;
 
+	private List<Vertex> finishers;
 	private List<Vertex> leaders;
 	private Deque<Vertex> deque;
-	private int time = 0;
 
 	@Override
 	public StronglyConnectedComponentsComputer init(int verticesCount, final List<Pair<Integer, Integer>> edges) {
+		vertices = new ArrayList<>();
+
 		for (int i = 0; i < verticesCount; i++) {
 			vertices.add(new Vertex(i));
 		}
@@ -36,17 +35,38 @@ public class KosarajuStronglyConnectedComponentsComputer implements StronglyConn
 
 	@Override
 	public List<Integer> compute() {
-		time = 0;
-		leaders = new LinkedList<>();
+		finishers = new ArrayList<>();
 		deque = new ArrayDeque<>();
-
+		System.out.println("Reverse graph processing ...");
 		for (int i = vertices.size() - 1; i >= 0; i--) {
 			if (!vertices.get(i).isReverseExplored()) {
 				depthFirstSearchReverse(vertices.get(i));
 			}
 		}
 
-		return null;
+		System.out.println("Forward graph processing ...");
+		leaders = new ArrayList<>();
+		deque = new ArrayDeque<>();
+		for (int i = finishers.size() - 1; i >= 0; i--) {
+			if (!finishers.get(i).isForwardExplored()) {
+				depthFirstSearchForward(finishers.get(i), finishers.get(i));
+			}
+		}
+
+		System.out.println("Sorting ...");
+		final List<Integer> result = new ArrayList<>();
+		Ordering.from((Vertex v1, Vertex v2) -> {
+			if (v1.getSize() > v2.getSize()) {
+				return -1;
+			}
+			if (v1.getSize() < v2.getSize()) {
+				return 1;
+			}
+			return 0;
+		}).immutableSortedCopy(leaders)
+				.forEach((Vertex vertex) -> result.add(vertex.getSize()));
+
+		return result;
 	}
 
 	public List<Vertex> getVertices() {
@@ -65,7 +85,25 @@ public class KosarajuStronglyConnectedComponentsComputer implements StronglyConn
 		}
 
 		final Vertex outVertex = deque.pollLast();
-		outVertex.setFinishingTime(++time);
+		finishers.add(outVertex);
+	}
+
+	public void depthFirstSearchForward(final Vertex inVertex, final Vertex leader) {
+		inVertex.setForwardExplored(true);
+		deque.add(inVertex);
+
+		// Find first not explored inbound(reverse pass) end explore it
+		for (int j = 0; j < inVertex.getOutbounds().size(); j++) {
+			if (!vertices.get(inVertex.getOutbounds().get(j)).isForwardExplored()) {
+				depthFirstSearchForward(vertices.get(inVertex.getOutbounds().get(j)), leader);
+			}
+		}
+
+		final Vertex outVertex = deque.pollLast();
+		leader.incrementSize();
+		if (deque.isEmpty()) {
+			leaders.add(outVertex);
+		}
 	}
 
 }

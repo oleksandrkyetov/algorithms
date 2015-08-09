@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -26,7 +28,30 @@ public class KosarajuStronglyConnectedComponentsComputerTest {
 				.build();
 		int verticesCount = 7;
 
-		kosarajuStronglyConnectedComponentsComputer.init(verticesCount, initialEdges).compute();
+		final List<Integer> result = kosarajuStronglyConnectedComponentsComputer.init(verticesCount, initialEdges).compute();
+
+		System.out.println(result);
+	}
+
+	@Test
+	public void test() throws Exception {
+		final ImmutableList.Builder<Pair<Integer, Integer>> graphBuilder = ImmutableList.<Pair<Integer, Integer>>builder();
+
+		final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("SCC.txt")));
+		String line;
+		while ((line = bufferedReader.readLine()) != null) {
+			String[] splitted = line.split(" ");
+
+			graphBuilder.add(Pair.of(Integer.parseInt(splitted[0]), Integer.parseInt(splitted[1])));
+		}
+
+		final List<Pair<Integer, Integer>> graph = graphBuilder.build();
+
+		final List<Integer> result = kosarajuStronglyConnectedComponentsComputer.init(875714, graph).compute();
+
+		for (int i = 0; i < 5; i++) {
+			System.out.print(result.get(i) + ",");
+		}
 	}
 
 }

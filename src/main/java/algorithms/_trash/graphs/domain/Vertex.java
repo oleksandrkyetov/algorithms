@@ -9,10 +9,10 @@ import java.util.List;
 public class Vertex {
 
 	private final int index;
-	private int finishingTime = 0;
 
 	private boolean isForwardExplored;
 	private boolean isReverseExplored;
+	private int size;
 
 	private List<Integer> outbounds = new ArrayList<>();
 	private List<Integer> inbounds = new ArrayList<>();
@@ -21,12 +21,8 @@ public class Vertex {
 		this.index = index;
 	}
 
-	public int getFinishingTime() {
-		return finishingTime;
-	}
-
-	public void setFinishingTime(int finishingTime) {
-		this.finishingTime = finishingTime;
+	public int getIndex() {
+		return index;
 	}
 
 	public boolean isForwardExplored() {
@@ -67,6 +63,18 @@ public class Vertex {
 
 	public void setInbounds(List<Integer> inbounds) {
 		this.inbounds = inbounds;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public void incrementSize() {
+		size++;
 	}
 
 }
