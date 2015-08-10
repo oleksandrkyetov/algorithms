@@ -17,7 +17,7 @@ Leetcode:
 - Implement Queue using Stacks (http://www.geeksforgeeks.org/queue-using-stacks/)
 - Power of Two
 - Contains Duplicate (http://www.geeksforgeeks.org/find-the-two-repeating-elements-in-a-given-array/)
-- Number of 1 Bits (https://en.wikipedia.org/wiki/Hamming_weight)
+- Number of 1 Bits (https://en.wikipedia.org/wiki/Hamming_weight) ??? Cases with unsigned integerss e.g. n = 2147483648 (10000000000000000000000000000000)
 
 
 TODO:
