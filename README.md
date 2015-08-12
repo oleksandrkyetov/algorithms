@@ -18,6 +18,8 @@ Leetcode:
 - Power of Two
 - Contains Duplicate (http://www.geeksforgeeks.org/find-the-two-repeating-elements-in-a-given-array/)
 - Number of 1 Bits (https://en.wikipedia.org/wiki/Hamming_weight) ??? Cases with unsigned integerss e.g. n = 2147483648 (10000000000000000000000000000000)
+- Populating Next Right Pointers in Each Node (http://articles.leetcode.com/2010/03/first-on-site-technical-interview.html)
+- Linked List Cycle (https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
 
 
 TODO:
