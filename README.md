@@ -20,6 +20,9 @@ Leetcode:
 - Number of 1 Bits (https://en.wikipedia.org/wiki/Hamming_weight) ??? Cases with unsigned integerss e.g. n = 2147483648 (10000000000000000000000000000000)
 - Populating Next Right Pointers in Each Node (http://articles.leetcode.com/2010/03/first-on-site-technical-interview.html)
 - Linked List Cycle (https://en.wikipedia.org/wiki/Cycle_detection#Tortoise_and_hare)
+- Search Insert Position (Not O(log(n) algorithm)
+- Excel Sheet Column Number (Concise algorithm)
+- Valid Parentheses (http://stackoverflow.com/questions/2509358/how-to-find-validity-of-a-string-of-parentheses-curly-brackets-and-square-brack)
 
 
 TODO:
@@ -53,6 +56,7 @@ TODO:
 - Counting Sort
 - Radix Sort
 - Karger Random Contraction (Min Cut)
+- Line sweep algorithm
 
 
 DONE:
