@@ -23,6 +23,9 @@ Leetcode:
 - Search Insert Position (Not O(log(n) algorithm)
 - Excel Sheet Column Number (Concise algorithm)
 - Valid Parentheses (http://stackoverflow.com/questions/2509358/how-to-find-validity-of-a-string-of-parentheses-curly-brackets-and-square-brack)
+- Isomorphic Strings (http://www.programcreek.com/2014/05/leetcode-isomorphic-strings-java/)
+- Count Primes (https://en.wikipedia.org/wiki/Primality_test) (https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+- Roman to Integer (http://www.blackwasp.co.uk/RomanToNumber_3.aspx) (http://www.aivosto.com/visustin/sample/roman.pdf)
 
 
 TODO:
