@@ -61,6 +61,8 @@ public class TopDownMergeSort<T extends Comparable<T>> implements Sort<T> {
 			}
 			*/
 		}
+
+		System.out.println(Arrays.toString(b));
 	}
 
 }

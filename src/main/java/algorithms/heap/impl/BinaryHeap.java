@@ -54,6 +54,11 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
 	}
 
 	@Override
+	public boolean isEmpty() {
+		return resizable.isEmpty();
+	}
+
+	@Override
 	public T[] getElements() {
 		return resizable.getElements();
 	}

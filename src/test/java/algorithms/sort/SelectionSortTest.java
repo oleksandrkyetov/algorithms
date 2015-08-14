@@ -41,4 +41,11 @@ public class SelectionSortTest {
 		assertEquals(Arrays.toString(expectedArray), Arrays.toString(actualArray));
 	}
 
+	@Test
+	public void test() {
+		final String[] array = new String[] {"lime", "ecru", "sand", "palm", "drab", "gold", "coal", "cyan", "gray", "dust", "pear", "iris", "kobi", "rose", "mist", "aqua", "dusk", "pink", "bone", "corn", "sage", "jade", "bark", "herb"};
+
+		selectionSort.sort(array);
+	}
+
 }

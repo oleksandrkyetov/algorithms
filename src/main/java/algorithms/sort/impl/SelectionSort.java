@@ -23,6 +23,7 @@ public class SelectionSort<T extends Comparable<T>> implements Sort<T> {
 			}
 
 			Helper.swap(b, i, min);
+			System.out.println(Arrays.toString(b));
 		}
 
 		return b;

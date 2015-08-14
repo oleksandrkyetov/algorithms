@@ -10,6 +10,8 @@ public interface Heap<T extends Comparable<T>> {
 
 	T peek();
 
+	boolean isEmpty();
+
 	T[] getElements();
 
 }

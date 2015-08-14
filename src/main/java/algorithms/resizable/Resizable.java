@@ -18,6 +18,8 @@ public interface Resizable<T extends Comparable<T>> {
 
 	public int getCapacity();
 
+	public boolean isEmpty();
+
 	public T[] getElements();
 
 }

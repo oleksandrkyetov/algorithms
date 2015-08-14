@@ -33,6 +33,8 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 		// Exchange picked pivot with a first element
 		Helper.swap(b, start, picked);
 
+		System.out.println(Arrays.toString(b));
+
 		// Sort array
 		int edge = start + 1;
 		for(int index = edge; index < end; index++) {
@@ -42,6 +44,8 @@ public class QuickSort<T extends Comparable<T>> implements Sort<T> {
 		}
 
 		Helper.swap(b, start, --edge);
+
+		System.out.println(Arrays.toString(b));
 
 		sort(b, start, edge);
 		sort(b, edge + 1, end);

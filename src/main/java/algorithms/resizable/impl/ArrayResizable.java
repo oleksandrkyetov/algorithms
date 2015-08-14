@@ -83,6 +83,11 @@ public class ArrayResizable<T extends Comparable<T>> implements Resizable<T> {
 	}
 
 	@Override
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	@Override
 	public T[] getElements() {
 		return Arrays.copyOf(elements, size);
 	}

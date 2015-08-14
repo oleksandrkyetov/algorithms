@@ -18,6 +18,8 @@ public class InsertionSort<T extends Comparable<T>> implements Sort<T> {
 			while (k > 0 && b[k].compareTo(b[k - 1]) < 0) {
 				Helper.swap(b, k - 1, k--);
 			}
+
+			System.out.println(Arrays.toString(b));
 		}
 
 		return b;
