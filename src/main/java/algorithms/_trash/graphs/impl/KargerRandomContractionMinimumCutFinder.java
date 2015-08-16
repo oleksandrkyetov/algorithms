@@ -81,7 +81,7 @@ public class KargerRandomContractionMinimumCutFinder implements MinimumCutFinder
 
 			//System.out.println("Element To Success: " + elementToSuccess + ", Element To Remove: " + elementToRemove);
 			for (Pair<String, List<String>> pair : adjacencyList) {
-				//System.out.println("Vertex: " + pair.getLeft() + ", Neighbours: " + pair.getRight());
+				//System.out.println("DirectedNotWeightedVertex: " + pair.getLeft() + ", Neighbours: " + pair.getRight());
 			}
 			//System.out.println("");
 		}

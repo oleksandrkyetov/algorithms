@@ -43,7 +43,6 @@ public class Pair<L, R> {
 
 		if (getLeft() != null ? !getLeft().equals(pair.getLeft()) : pair.getLeft() != null) return false;
 		return !(getRight() != null ? !getRight().equals(pair.getRight()) : pair.getRight() != null);
-
 	}
 
 	@Override

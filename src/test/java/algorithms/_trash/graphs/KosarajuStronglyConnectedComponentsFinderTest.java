@@ -1,6 +1,6 @@
 package algorithms._trash.graphs;
 
-import algorithms._trash.graphs.impl.KosarajuStronglyConnectedComponentsComputer;
+import algorithms._trash.graphs.impl.KosarajuStronglyConnectedComponentsFinder;
 import algorithms.utils.Pair;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
@@ -13,10 +13,10 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class KosarajuStronglyConnectedComponentsComputerTest {
+public class KosarajuStronglyConnectedComponentsFinderTest {
 
 	@InjectMocks
-	private KosarajuStronglyConnectedComponentsComputer kosarajuStronglyConnectedComponentsComputer;
+	private KosarajuStronglyConnectedComponentsFinder kosarajuStronglyConnectedComponentsComputer;
 
 	@Test
 	public void compute() {
@@ -37,7 +37,8 @@ public class KosarajuStronglyConnectedComponentsComputerTest {
 	public void test() throws Exception {
 		final ImmutableList.Builder<Pair<Integer, Integer>> graphBuilder = ImmutableList.<Pair<Integer, Integer>>builder();
 
-		final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("SCC.txt")));
+		final BufferedReader bufferedReader = new BufferedReader(
+				new InputStreamReader(getClass().getClassLoader().getResourceAsStream("SCC.txt")));
 		String line;
 		while ((line = bufferedReader.readLine()) != null) {
 			String[] splitted = line.split(" ");

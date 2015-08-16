@@ -52,7 +52,7 @@ public class HeapSortTest {
 
 	@Test
 	public void test() {
-		final String[] array = new String[] {"lime", "ecru", "sand", "palm", "drab", "gold", "coal", "cyan", "gray", "dust", "pear", "iris", "kobi", "rose", "mist", "aqua", "dusk", "pink", "bone", "corn", "sage", "jade", "bark", "herb"};
+		final String[] array = new String[] { "slug", "goat", "boar", "deer", "hoki", "moth", "bear", "oryx", "duck", "erne", "puma", "hawk", "toad", "hake", "mule", "mink", "kiwi", "frog", "wolf", "carp", "worm", "crab", "mole", "tuna" };
 
 		heapSort.sort(array);
 	}

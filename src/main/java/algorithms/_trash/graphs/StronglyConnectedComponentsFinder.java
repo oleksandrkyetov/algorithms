@@ -4,9 +4,9 @@ import algorithms.utils.Pair;
 
 import java.util.List;
 
-public interface StronglyConnectedComponentsComputer {
+public interface StronglyConnectedComponentsFinder {
 
-	StronglyConnectedComponentsComputer init(int verticesCount, final List<Pair<Integer, Integer>> edges);
+	StronglyConnectedComponentsFinder init(int verticesCount, final List<Pair<Integer, Integer>> edges);
 
 	/**
 	 * Leader vertices of the strongly connected components

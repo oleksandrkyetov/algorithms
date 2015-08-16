@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Vertex representation
+ * DirectedNotWeightedVertex representation
  */
-public class Vertex {
+public class DirectedNotWeightedVertex {
 
 	private final int index;
 
@@ -17,7 +17,7 @@ public class Vertex {
 	private List<Integer> outbounds = new ArrayList<>();
 	private List<Integer> inbounds = new ArrayList<>();
 
-	public Vertex(int index) {
+	public DirectedNotWeightedVertex(int index) {
 		this.index = index;
 	}
 

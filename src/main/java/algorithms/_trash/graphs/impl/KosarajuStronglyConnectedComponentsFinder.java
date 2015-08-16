@@ -1,7 +1,7 @@
 package algorithms._trash.graphs.impl;
 
-import algorithms._trash.graphs.StronglyConnectedComponentsComputer;
-import algorithms._trash.graphs.domain.Vertex;
+import algorithms._trash.graphs.StronglyConnectedComponentsFinder;
+import algorithms._trash.graphs.domain.DirectedNotWeightedVertex;
 import algorithms.utils.Pair;
 import com.google.common.collect.Ordering;
 import org.springframework.stereotype.Component;
@@ -9,20 +9,20 @@ import org.springframework.stereotype.Component;
 import java.util.*;
 
 @Component
-public class KosarajuStronglyConnectedComponentsComputer implements StronglyConnectedComponentsComputer {
+public class KosarajuStronglyConnectedComponentsFinder implements StronglyConnectedComponentsFinder {
 
-	private List<Vertex> vertices;
+	private List<DirectedNotWeightedVertex> vertices;
 
-	private List<Vertex> finishers;
-	private List<Vertex> leaders;
-	private Deque<Vertex> deque;
+	private List<DirectedNotWeightedVertex> finishers;
+	private List<DirectedNotWeightedVertex> leaders;
+	private Deque<DirectedNotWeightedVertex> deque;
 
 	@Override
-	public StronglyConnectedComponentsComputer init(int verticesCount, final List<Pair<Integer, Integer>> edges) {
+	public StronglyConnectedComponentsFinder init(int verticesCount, final List<Pair<Integer, Integer>> edges) {
 		vertices = new ArrayList<>();
 
 		for (int i = 0; i < verticesCount; i++) {
-			vertices.add(new Vertex(i));
+			vertices.add(new DirectedNotWeightedVertex(i));
 		}
 
 		for (Pair<Integer, Integer> edge : edges) {
@@ -55,7 +55,7 @@ public class KosarajuStronglyConnectedComponentsComputer implements StronglyConn
 
 		System.out.println("Sorting ...");
 		final List<Integer> result = new ArrayList<>();
-		Ordering.from((Vertex v1, Vertex v2) -> {
+		Ordering.from((DirectedNotWeightedVertex v1, DirectedNotWeightedVertex v2) -> {
 			if (v1.getSize() > v2.getSize()) {
 				return -1;
 			}
@@ -64,16 +64,16 @@ public class KosarajuStronglyConnectedComponentsComputer implements StronglyConn
 			}
 			return 0;
 		}).immutableSortedCopy(leaders)
-				.forEach((Vertex vertex) -> result.add(vertex.getSize()));
+				.forEach((DirectedNotWeightedVertex vertex) -> result.add(vertex.getSize()));
 
 		return result;
 	}
 
-	public List<Vertex> getVertices() {
+	public List<DirectedNotWeightedVertex> getVertices() {
 		return vertices;
 	}
 
-	public void depthFirstSearchReverse(final Vertex inVertex) {
+	public void depthFirstSearchReverse(final DirectedNotWeightedVertex inVertex) {
 		inVertex.setReverseExplored(true);
 		deque.add(inVertex);
 
@@ -84,11 +84,11 @@ public class KosarajuStronglyConnectedComponentsComputer implements StronglyConn
 			}
 		}
 
-		final Vertex outVertex = deque.pollLast();
+		final DirectedNotWeightedVertex outVertex = deque.pollLast();
 		finishers.add(outVertex);
 	}
 
-	public void depthFirstSearchForward(final Vertex inVertex, final Vertex leader) {
+	public void depthFirstSearchForward(final DirectedNotWeightedVertex inVertex, final DirectedNotWeightedVertex leader) {
 		inVertex.setForwardExplored(true);
 		deque.add(inVertex);
 
@@ -99,7 +99,7 @@ public class KosarajuStronglyConnectedComponentsComputer implements StronglyConn
 			}
 		}
 
-		final Vertex outVertex = deque.pollLast();
+		final DirectedNotWeightedVertex outVertex = deque.pollLast();
 		leader.incrementSize();
 		if (deque.isEmpty()) {
 			leaders.add(outVertex);
