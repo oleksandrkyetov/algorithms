@@ -60,6 +60,7 @@ TODO:
 - Radix Sort
 - Karger Random Contraction (Min Cut)
 - Line sweep algorithm
+- A* search algorithm
 
 
 DONE:
