@@ -24,7 +24,7 @@ public class DijkstraShortestPathFinderTest {
 	private DijkstraShortestPathFinder dijkstraShortestPathFinder;
 
 	@Test
-	public void compute() {
+	public void find() {
 		final List<Set<Pair<Integer, Integer>>> adjacencyList = ImmutableList.<Set<Pair<Integer, Integer>>>builder()
 				.add(ImmutableSet.of(Pair.of(1, 1), Pair.of(2, 3)))
 				.add(ImmutableSet.of(Pair.of(0, 1), Pair.of(2, 1), Pair.of(3, 3)))
