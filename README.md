@@ -61,6 +61,7 @@ TODO:
 - Karger Random Contraction (Min Cut)
 - Line sweep algorithm
 - k-th min element finder
+- A* search algorithm
 
 
 DONE:
