@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class HasBasedTwoSumCounterTest {
+public class HashBasedTwoSumCounterTest {
 
 	@InjectMocks
 	private HashBasedTwoSumCounter hashBasedTwoSumCounter;
