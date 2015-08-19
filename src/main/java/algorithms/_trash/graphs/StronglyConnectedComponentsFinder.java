@@ -12,6 +12,6 @@ public interface StronglyConnectedComponentsFinder {
 	 * Leader vertices of the strongly connected components
 	 * @return list of leaders of strongly connected components
 	 */
-	List<Integer> compute();
+	List<Integer> find();
 
 }

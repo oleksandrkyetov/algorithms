@@ -19,7 +19,7 @@ public class KosarajuStronglyConnectedComponentsFinderTest {
 	private KosarajuStronglyConnectedComponentsFinder kosarajuStronglyConnectedComponentsComputer;
 
 	@Test
-	public void compute() {
+	public void find() {
 		final List<Pair<Integer, Integer>> initialEdges = ImmutableList.<Pair<Integer, Integer>>builder()
 				.add(Pair.of(3, 4)).add(Pair.of(4, 6))
 				.add(Pair.of(1, 2)).add(Pair.of(1, 3))
@@ -28,7 +28,7 @@ public class KosarajuStronglyConnectedComponentsFinderTest {
 				.build();
 		int verticesCount = 7;
 
-		final List<Integer> result = kosarajuStronglyConnectedComponentsComputer.init(verticesCount, initialEdges).compute();
+		final List<Integer> result = kosarajuStronglyConnectedComponentsComputer.init(verticesCount, initialEdges).find();
 
 		System.out.println(result);
 	}
@@ -48,7 +48,7 @@ public class KosarajuStronglyConnectedComponentsFinderTest {
 
 		final List<Pair<Integer, Integer>> graph = graphBuilder.build();
 
-		final List<Integer> result = kosarajuStronglyConnectedComponentsComputer.init(875714, graph).compute();
+		final List<Integer> result = kosarajuStronglyConnectedComponentsComputer.init(875714, graph).find();
 
 		for (int i = 0; i < 5; i++) {
 			System.out.print(result.get(i) + ",");

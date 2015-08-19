@@ -34,7 +34,7 @@ public class KosarajuStronglyConnectedComponentsFinder implements StronglyConnec
 	}
 
 	@Override
-	public List<Integer> compute() {
+	public List<Integer> find() {
 		finishers = new ArrayList<>();
 		deque = new ArrayDeque<>();
 		System.out.println("Reverse graph processing ...");

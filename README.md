@@ -29,6 +29,7 @@ Leetcode:
 
 
 TODO:
+
 - Percolation
 - Bouncing Balls
 - Stack
@@ -60,6 +61,7 @@ TODO:
 - Radix Sort
 - Karger Random Contraction (Min Cut)
 - Line sweep algorithm
+- k-th min element finder
 - A* search algorithm
 - Splay Tree
 - AVL Tree
