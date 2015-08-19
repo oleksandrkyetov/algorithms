@@ -13,7 +13,7 @@ import algorithms._trash.graphs.impl.HeapsMedianMaintenanceCounter;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class HeapsMedianMaintananceCounterTest {
+public class HeapsMedianMaintenanceCounterTest {
 
 	@InjectMocks
 	private HeapsMedianMaintenanceCounter heapsMedianMaintenanceCounter;
