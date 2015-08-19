@@ -43,7 +43,7 @@ TODO:
 - Unordered Priority Queue
 - Ordered Priority Queue
 - Ternary Heap
-- Symbol Table
+- Symbol Table / Hash Table
 - Binary Search
 - Top Down Heap Builder
 - 2-3 Search Tree
@@ -61,6 +61,8 @@ TODO:
 - Karger Random Contraction (Min Cut)
 - Line sweep algorithm
 - A* search algorithm
+- Splay Tree
+- AVL Tree
 
 
 DONE:
